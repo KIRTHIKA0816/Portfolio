@@ -4,8 +4,6 @@ import {
   type CSSProperties,
 } from "react";
 
-import portrait from "./assets/kirthika-photo.png";
-
 const projects = [
   {
     number: "01",
@@ -493,11 +491,15 @@ export default function App() {
         <section className="hero">
           <div className="hero-grid" />
 
-          <div className="hero-content">
+          <div className="hero-orb hero-orb-one" />
+          <div className="hero-orb hero-orb-two" />
+          <div className="hero-cross hero-cross-one" />
+          <div className="hero-cross hero-cross-two" />
 
+          <div className="hero-content">
             <div className="kicker">
-              B.SC COMPUTER SCIENCE{" "}
-              •{" "}
+              B.SC COMPUTER SCIENCE
+              <span className="kicker-dot">•</span>
               <span id="role-text">
                 FULL STACK DEVELOPER
               </span>
@@ -511,13 +513,17 @@ export default function App() {
               KIRTHIKA S
             </div>
 
-            <p>
-              A passionate B.Sc. Computer
-              Science student and full stack
-              developer creating clean,
-              responsive and useful digital
-              experiences.
-            </p>
+            <div className="hero-copy-row">
+              <p>
+                A passionate B.Sc. Computer Science student
+                and full stack developer creating clean,
+                responsive and useful digital experiences.
+              </p>
+
+              <span className="hero-scroll-note">
+                SCROLL TO EXPLORE ↓
+              </span>
+            </div>
 
             <div className="buttons">
               <a
@@ -536,11 +542,31 @@ export default function App() {
             </div>
           </div>
 
-          <div className="hero-photo">
-            <img
-              src={portrait}
-              alt="Kirthika"
-            />
+          <div className="hero-skills" aria-label="Skills and strengths">
+            <div className="hero-skills-track">
+              {[
+                "PYTHON",
+                "MONGODB",
+                "CLEAN CODE",
+                "OPEN SOURCE",
+                "FULL STACK DEVELOPMENT",
+                "REACT",
+                "FLASK",
+                "MYSQL",
+                "PYTHON",
+                "MONGODB",
+                "CLEAN CODE",
+                "OPEN SOURCE",
+                "FULL STACK DEVELOPMENT",
+                "REACT",
+                "FLASK",
+                "MYSQL",
+              ].map((skill, index) => (
+                <span key={`${skill}-${index}`}>
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 

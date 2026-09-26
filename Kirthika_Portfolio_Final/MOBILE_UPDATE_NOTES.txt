@@ -1,0 +1,14 @@
+Kirthika Portfolio mobile/hero update
+
+Changes:
+- Removed the hero photo from the first page.
+- Rebuilt the first screen as a bold typographic hero based on the supplied reference image.
+- Kept KIRTHIKA S fully visible on desktop and mobile.
+- Added animated skills strip at the bottom of the hero.
+- Added mobile-first responsive navigation and hero layout.
+- Kept the existing sticky project stack and live project previews.
+- Kept the existing contact form and email destination.
+
+Run:
+npm install
+npm run dev

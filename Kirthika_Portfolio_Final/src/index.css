@@ -2333,3 +2333,485 @@ footer {
             .01ms !important;
     }
 }
+/* =========================================================
+   FINAL HERO REFRESH — TYPOGRAPHIC, NO PHOTO
+========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    padding: 150px 7vw 92px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 82% 28%, rgba(216,255,0,.075), transparent 24%),
+        radial-gradient(circle at 70% 70%, rgba(255,39,189,.055), transparent 25%),
+        #050505;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(216,255,0,.06), transparent 16%, transparent 84%, rgba(216,255,0,.035)),
+        linear-gradient(180deg, rgba(255,255,255,.018), transparent 30%, transparent 70%, rgba(255,255,255,.018));
+}
+
+.hero-grid {
+    opacity: .9;
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.kicker {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding-left: 2px;
+    color: var(--lime);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3.2px;
+}
+
+.kicker-dot {
+    color: #5b5b5b;
+}
+
+.outline {
+    margin-left: -4px;
+    font-size: clamp(48px, 7.2vw, 106px);
+    line-height: .86;
+    letter-spacing: .01em;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1.15px rgba(245,245,245,.82);
+    text-shadow: 0 0 25px rgba(255,255,255,.025);
+}
+
+.name {
+    margin-top: 4px;
+    font-size: clamp(74px, 12.5vw, 176px);
+    line-height: .84;
+    letter-spacing: -.035em;
+    white-space: nowrap;
+    max-width: 100%;
+    background:
+        linear-gradient(100deg, #ff3c7c 0%, #ff5d7f 50%, #ff8a73 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 10px 60px rgba(255,73,125,.08);
+}
+
+.hero-copy-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1160px;
+    margin-top: 34px;
+}
+
+.hero-copy-row p {
+    max-width: 660px;
+    margin: 0;
+    color: #a2a2a2;
+    font-size: clamp(13px, 1.25vw, 16px);
+    line-height: 1.85;
+}
+
+.hero-scroll-note {
+    color: #5f5f5f;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    animation: scrollNotePulse 2.6s ease-in-out infinite;
+}
+
+.buttons {
+    margin-top: 28px;
+}
+
+.hero-skills {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.035);
+    background: rgba(5,5,5,.72);
+    backdrop-filter: blur(10px);
+    z-index: 6;
+}
+
+.hero-skills::before,
+.hero-skills::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-skills::before {
+    left: 0;
+    background: linear-gradient(90deg, #050505, transparent);
+}
+
+.hero-skills::after {
+    right: 0;
+    background: linear-gradient(270deg, #050505, transparent);
+}
+
+.hero-skills-track {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    min-width: max-content;
+    animation: skillMarquee 28s linear infinite;
+    will-change: transform;
+}
+
+.hero-skills-track span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding: 0 26px;
+    color: #818181;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    white-space: nowrap;
+}
+
+.hero-skills-track span::after {
+    content: "•";
+    color: #303030;
+    font-size: 10px;
+    margin-left: 22px;
+}
+
+.hero-skills-track span:nth-child(4n + 1) {
+    color: #899100;
+}
+
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(1px);
+    opacity: .55;
+}
+
+.hero-orb-one {
+    width: 260px;
+    height: 260px;
+    right: 11vw;
+    top: 19%;
+    border: 1px solid rgba(216,255,0,.18);
+    box-shadow:
+        0 0 80px rgba(216,255,0,.04),
+        inset 0 0 60px rgba(216,255,0,.025);
+    animation: orbFloat 5s ease-in-out infinite;
+}
+
+.hero-orb-two {
+    width: 110px;
+    height: 110px;
+    right: 21vw;
+    top: 35%;
+    border: 1px solid rgba(255,39,189,.16);
+    animation: orbFloat 6.5s ease-in-out infinite reverse;
+}
+
+.hero-cross {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    opacity: .6;
+}
+
+.hero-cross::before,
+.hero-cross::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(216,255,0,.7);
+    transform: translateX(-50%);
+}
+
+.hero-cross::after {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero-cross-one {
+    right: 6vw;
+    top: 28%;
+}
+
+.hero-cross-two {
+    left: 46%;
+    bottom: 18%;
+    transform: scale(.65);
+    opacity: .3;
+}
+
+@keyframes skillMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollNotePulse {
+    0%, 100% {
+        opacity: .35;
+        transform: rotate(180deg) translateY(0);
+    }
+    50% {
+        opacity: .8;
+        transform: rotate(180deg) translateY(-5px);
+    }
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+    50% {
+        transform: translate3d(0,-12px,0) scale(1.02);
+    }
+}
+
+/* =========================================================
+   MOBILE — FIRST SCREEN PRIORITY
+========================================================= */
+
+@media (max-width: 900px) {
+    nav {
+        padding: 12px 5vw;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 12px;
+        letter-spacing: 2.8px;
+    }
+
+    .navlinks {
+        width: 100%;
+        gap: 18px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+    }
+
+    .navlinks::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navlinks a {
+        flex: 0 0 auto;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 150px 5vw 88px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .kicker {
+        gap: 7px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+        font-size: 9px;
+        line-height: 1.6;
+        letter-spacing: 2.3px;
+    }
+
+    .outline {
+        font-size: clamp(44px, 12vw, 76px);
+        line-height: .9;
+        letter-spacing: 0;
+    }
+
+    .name {
+        margin-top: 5px;
+        font-size: clamp(54px, 15vw, 86px);
+        line-height: .86;
+        letter-spacing: -.035em;
+        white-space: nowrap;
+    }
+
+    .hero-copy-row {
+        display: block;
+        margin-top: 26px;
+    }
+
+    .hero-copy-row p {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .hero-scroll-note {
+        display: inline-block;
+        margin-top: 14px;
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 8px;
+        letter-spacing: 2.2px;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 12px 17px;
+        font-size: 10px;
+    }
+
+    .hero-skills {
+        min-height: 52px;
+    }
+
+    .hero-skills-track {
+        animation-duration: 24s;
+    }
+
+    .hero-skills-track span {
+        padding: 0 18px;
+        font-size: 8px;
+        letter-spacing: 1.8px;
+    }
+
+    .hero-skills-track span::after {
+        margin-left: 16px;
+    }
+
+    .hero-orb-one {
+        width: 155px;
+        height: 155px;
+        right: -28px;
+        top: 25%;
+        opacity: .35;
+    }
+
+    .hero-orb-two {
+        width: 75px;
+        height: 75px;
+        right: 19vw;
+        top: 34%;
+    }
+
+    .hero-cross-one {
+        right: 6vw;
+        top: 39%;
+        transform: scale(.8);
+    }
+
+    .hero-cross-two {
+        left: 13vw;
+        bottom: 16%;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        padding-top: 148px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .kicker {
+        font-size: 8px;
+        letter-spacing: 1.9px;
+    }
+
+    .outline {
+        font-size: clamp(40px, 11.7vw, 60px);
+    }
+
+    .name {
+        font-size: clamp(48px, 14.2vw, 72px);
+    }
+
+    .hero-copy-row p {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .hero-scroll-note {
+        font-size: 7px;
+        letter-spacing: 1.9px;
+    }
+
+    .hero-skills-track span {
+        padding: 0 15px;
+        font-size: 7.5px;
+    }
+
+    .hero-skills-track span::after {
+        margin-left: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-skills-track,
+    .hero-scroll-note,
+    .hero-orb,
+    .hero-orb-two,
+    .hero-orb-one {
+        animation: none !important;
+    }
+}
