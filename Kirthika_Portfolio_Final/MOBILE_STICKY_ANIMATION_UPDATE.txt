@@ -1,0 +1,1 @@
+Mobile sticky project animation update applied: desktop-style sticky stacking is now preserved on mobile. Existing desktop styles/content unchanged. Mobile cards keep full project previews visible and use smaller sticky offsets for compact screens.

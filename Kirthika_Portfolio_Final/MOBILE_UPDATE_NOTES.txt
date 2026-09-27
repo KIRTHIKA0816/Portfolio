@@ -1,14 +1,17 @@
-Kirthika Portfolio mobile/hero update
+Kirthika Portfolio — Mobile Responsive Update
 
-Changes:
-- Removed the hero photo from the first page.
-- Rebuilt the first screen as a bold typographic hero based on the supplied reference image.
-- Kept KIRTHIKA S fully visible on desktop and mobile.
-- Added animated skills strip at the bottom of the hero.
-- Added mobile-first responsive navigation and hero layout.
-- Kept the existing sticky project stack and live project previews.
-- Kept the existing contact form and email destination.
+Desktop visual/content/animations are preserved.
+Only mobile breakpoints were enhanced.
 
-Run:
-npm install
-npm run dev
+Mobile improvements:
+- compact hamburger navigation
+- mobile menu overlay
+- hero typography fit without cropping
+- skills marquee preserved
+- two-column service cards on small screens
+- project accordion/tap-to-expand on mobile
+- project live links remain available
+- contact layout stacks cleanly for touch use
+- LinkedIn/GitHub icons remain touch friendly
+
+The actual desktop project stack animation and desktop text are not intentionally changed by the mobile layer.

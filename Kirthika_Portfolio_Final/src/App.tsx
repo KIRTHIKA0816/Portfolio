@@ -1,6 +1,7 @@
 import {
   useEffect,
   useRef,
+  useState,
   type CSSProperties,
 } from "react";
 
@@ -176,6 +177,12 @@ function ProjectPreview({
 export default function App() {
   const progressRef =
     useRef<HTMLDivElement>(null);
+
+  const [mobileMenuOpen, setMobileMenuOpen] =
+    useState(false);
+
+  const [mobileProjectIndex, setMobileProjectIndex] =
+    useState<number | null>(0);
 
   /*
    * SCROLL PROGRESS
@@ -459,28 +466,62 @@ export default function App() {
         <a
           href="#home"
           className="logo"
+          onClick={() => setMobileMenuOpen(false)}
         >
           KIRTHIKA S
         </a>
 
         <div className="navlinks">
-          <a href="#about">
-            ABOUT
-          </a>
-
-          <a href="#services">
-            SERVICES
-          </a>
-
-          <a href="#projects">
-            PROJECTS
-          </a>
-
-          <a href="#contact">
-            CONTACT
-          </a>
+          <a href="#about">ABOUT</a>
+          <a href="#services">SERVICES</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#contact">CONTACT</a>
         </div>
+
+        <button
+          type="button"
+          className={`mobile-menu-button ${mobileMenuOpen ? "active" : ""}`}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </nav>
+
+      <div
+        className={`mobile-menu ${mobileMenuOpen ? "show" : ""}`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div className="mobile-menu-inner">
+          <div className="mobile-menu-label">NAVIGATION</div>
+
+          {[
+            ["#home", "HOME"],
+            ["#about", "ABOUT"],
+            ["#services", "SERVICES"],
+            ["#projects", "PROJECTS"],
+            ["#contact", "CONTACT"],
+          ].map(([href, label], index) => (
+            <a
+              key={href}
+              href={href}
+              className="mobile-menu-link"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span>0{index + 1}</span>
+              <strong>{label}</strong>
+              <i>↗</i>
+            </a>
+          ))}
+
+          <div className="mobile-menu-footer">
+            B.SC COMPUTER SCIENCE • FULL STACK DEVELOPER
+          </div>
+        </div>
+      </div>
 
       <main>
 
@@ -742,7 +783,11 @@ export default function App() {
               (project, index) => (
 
                 <article
-                  className={`project-card project-${project.theme}`}
+                  className={`project-card project-${project.theme} ${
+                    mobileProjectIndex === index
+                      ? "mobile-project-open"
+                      : "mobile-project-collapsed"
+                  }`}
                   style={
                     {
                       "--index": index,
@@ -788,6 +833,24 @@ export default function App() {
                         <ArrowIcon />
                       </a>
                     )}
+
+                    <button
+                      type="button"
+                      className="mobile-project-toggle"
+                      aria-label={`${
+                        mobileProjectIndex === index
+                          ? "Collapse"
+                          : "Expand"
+                      } ${project.name}`}
+                      aria-expanded={mobileProjectIndex === index}
+                      onClick={() =>
+                        setMobileProjectIndex((current) =>
+                          current === index ? null : index
+                        )
+                      }
+                    >
+                      {mobileProjectIndex === index ? "−" : "+"}
+                    </button>
 
                   </div>
 
