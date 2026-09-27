@@ -3706,3 +3706,205 @@ footer {
         min-height: 230px;
     }
 }
+
+/* =========================================================
+   FINAL MOBILE POLISH — DESKTOP PRESERVED
+   Only applies to screens 700px and below.
+   ========================================================= */
+@media (max-width: 700px) {
+  html, body, #root, .site-shell {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  nav {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+  }
+
+  .navlinks { display: none; }
+  .mobile-menu-button { display: grid; flex: 0 0 42px; }
+
+  .hero {
+    width: 100%;
+    min-height: calc(100svh - 62px);
+    padding: 78px 20px 55px;
+    overflow: hidden;
+  }
+
+  .hero-content { width: 100%; min-width: 0; }
+  .outline { max-width: 100%; font-size: clamp(46px, 16vw, 72px); }
+  .name { max-width: 100%; font-size: clamp(48px, 17vw, 82px); white-space: normal; overflow-wrap: normal; }
+
+  .buttons { width: 100%; grid-template-columns: 1fr 1fr; }
+  .btn { min-width: 0; }
+
+  section,
+  .projects,
+  .contact {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: hidden;
+  }
+
+  .about { width: 100%; grid-template-columns: 1fr; }
+  .about p { width: 100%; max-width: none; }
+
+  /* Services become one clean column on phones. */
+  .services {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .service,
+  .service:nth-child(-n + 2),
+  .service:nth-child(2) {
+    width: 100%;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  /* Keep the desktop-style sticky project animation on mobile,
+     but reduce the card size so the complete card stays inside the viewport. */
+  .project-stack {
+    width: 100%;
+    padding-bottom: 10vh;
+    overflow: visible;
+  }
+
+  .project-card,
+  .project-card.project-violet,
+  .project-card.project-pink,
+  .project-card.project-blue,
+  .project-card.project-mint {
+    width: 100%;
+    max-width: 100%;
+    position: sticky;
+    top: 74px;
+    left: auto;
+    right: auto;
+    height: min(72svh, 570px);
+    min-height: 500px;
+    margin: 0 0 18vh;
+    padding: 14px;
+    overflow: hidden;
+    transform: none;
+    box-sizing: border-box;
+  }
+
+  .project-card:hover,
+  .project-card:hover .project-preview,
+  .project-card:hover .project-topline h3 {
+    transform: none;
+  }
+
+  .project-topline {
+    width: 100%;
+    height: 54px;
+    min-height: 54px;
+    padding: 0;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .project-topline > div { min-width: 0; }
+  .project-topline small,
+  .project-topline h3 { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .project-topline > a { min-width: 0; max-width: 100%; }
+
+  .project-copy {
+    width: 100%;
+    padding: 0;
+    margin: 12px 0 10px;
+  }
+
+  .project-copy p { width: 100%; max-width: none; }
+  .project-copy > div { width: 100%; flex-wrap: wrap; }
+
+  .project-preview,
+  .ransomware-old-preview {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 290px;
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  .live-project-preview { width: 100%; overflow: hidden; }
+  .live-project-preview iframe { width: 100%; max-width: 100%; }
+
+  /* When a project is collapsed, keep its header visible and compact. */
+  .mobile-project-collapsed {
+    height: 86px;
+    min-height: 86px;
+  }
+
+  .mobile-project-collapsed .project-copy,
+  .mobile-project-collapsed .project-preview,
+  .mobile-project-collapsed .ransomware-old-preview {
+    display: none;
+  }
+
+  .mobile-project-open {
+    height: min(72svh, 570px);
+    min-height: 500px;
+  }
+
+  /* Contact is always a single readable column. */
+  .contact-layout {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-talk,
+  .contact-side,
+  .contact-form,
+  .contact-email-block {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .contact-talk h2 { font-size: clamp(52px, 17vw, 78px); }
+  .contact-email-block > a { display: block; overflow-wrap: anywhere; }
+  .contact-form { margin: 0; }
+
+  footer {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero { padding-left: 16px; padding-right: 16px; }
+  section, .projects, .contact { padding-left: 16px; padding-right: 16px; }
+
+  .outline { font-size: clamp(42px, 15.5vw, 64px); }
+  .name { font-size: clamp(46px, 16.5vw, 72px); }
+
+  .project-card {
+    top: 70px;
+    min-height: 470px;
+    height: min(70svh, 540px);
+    margin-bottom: 16vh;
+    padding: 12px;
+  }
+
+  .project-card.mobile-project-open {
+    min-height: 470px;
+    height: min(70svh, 540px);
+  }
+
+  .project-preview,
+  .ransomware-old-preview { height: 255px; }
+}
