@@ -1,0 +1,4 @@
+Mobile responsive correction applied to src/index.css.
+Desktop content/design/animations are preserved. The mobile layer fixes viewport overflow,
+navigation, hero sizing, service stacking, sticky project animation, live previews,
+contact layout, email wrapping, and touch-friendly spacing.
